@@ -1,28 +1,3 @@
-// Contact Form Submission
-document.getElementById('contactForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    fetch(this.action, {
-        method: 'POST',
-        body: new FormData(this),
-    })
-    .then(response => {
-        if (response.ok) {
-            alert('Form submitted successfully!');
-            this.reset();
-            document.getElementById('contactModal').classList.remove('show');
-            document.body.classList.remove('modal-open');
-            document.querySelector('.modal-backdrop').remove();
-        } else {
-            alert('There was an error submitting the form. Please try again.');
-        }
-    })
-    .catch(error => {
-        console.error('Error:', error);
-        alert('There was an error submitting the form. Please try again.');
-    });
-});
-
 // Services Slider
 const slider = document.querySelector('.slider');
 const slides = document.querySelectorAll('.slide');
